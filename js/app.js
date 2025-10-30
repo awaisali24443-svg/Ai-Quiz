@@ -1,11 +1,29 @@
 import { GoogleGenAI } from "@google/genai";
 
 const API_KEY = process.env.API_KEY;
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+let ai;
+if (API_KEY) {
+    ai = new GoogleGenAI({ apiKey: API_KEY });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
+    initNav();
     route();
 });
+
+function initNav() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (navToggle && mobileNav) {
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileNav.classList.toggle('is-active');
+            document.body.classList.toggle('nav-open');
+        });
+    }
+}
 
 function route() {
     const page = window.location.pathname.split("/").pop() || 'index.html';
@@ -17,6 +35,7 @@ function route() {
     }
 
     switch (page) {
+        case '':
         case 'index.html':
             initHomePage();
             break;
@@ -61,7 +80,7 @@ async function initHomePage() {
     } catch (error) {
         console.error('Error initializing home page:', error);
         const container = document.getElementById('topics-container');
-        if (container) container.innerHTML = `<p>Error loading topics. Please try again later.</p>`;
+        if (container) container.innerHTML = `<p class="error-message">Error loading topics. Please try again later.</p>`;
     }
 }
 
@@ -83,6 +102,8 @@ async function initLevelsPage() {
         const allData = await response.json();
         const topicData = allData[topicId];
         
+        if (!topicData) throw new Error(`Topic data for "${topicId}" not found.`);
+
         const headerContainer = document.getElementById('level-page-header');
         const levelsContainer = document.getElementById('levels-container');
         if (!headerContainer || !levelsContainer) return;
@@ -112,7 +133,7 @@ async function initLevelsPage() {
     } catch (error) {
         console.error('Error initializing levels page:', error);
         const levelsContainer = document.getElementById('levels-container');
-        if (levelsContainer) levelsContainer.innerHTML = `<p>Error loading levels. Please try again later.</p>`;
+        if (levelsContainer) levelsContainer.innerHTML = `<p class="error-message">Error loading levels. Please try again later.</p>`;
     }
 }
 
@@ -134,6 +155,9 @@ async function initQuizPage() {
         if (!response.ok) throw new Error('Failed to load questions.');
         const allData = await response.json();
         const levelData = allData[topicId].levels.find(l => l.level == level);
+        
+        if (!levelData || !levelData.questions) throw new Error(`Questions for topic "${topicId}" level ${level} not found.`);
+        
         const questions = levelData.questions;
 
         let currentQuestionIndex = 0;
@@ -189,12 +213,12 @@ async function initQuizPage() {
 
             Array.from(optionsContainer.children).forEach(button => {
                 const optionText = button.querySelector('.option-text').textContent;
+                button.disabled = true; // Disable all buttons after selection
                 if (optionText === currentQuestion.answer) {
                     button.classList.add('correct');
                 } else if (button.classList.contains('selected')) {
                     button.classList.add('incorrect');
                 }
-                button.disabled = true;
             });
             
             setTimeout(() => {
@@ -207,13 +231,13 @@ async function initQuizPage() {
                     localStorage.setItem('quizResults', JSON.stringify(userAnswers));
                     window.location.href = 'results.html';
                 }
-            }, 1000);
+            }, 1200); // Increased delay to see result
         });
 
         loadQuestion();
     } catch (error) {
         console.error('Error initializing quiz page:', error);
-        document.querySelector('.quiz-container').innerHTML = `<p>Error loading quiz. Please try again later.</p>`;
+        document.querySelector('.quiz-container').innerHTML = `<p class="error-message">Error loading quiz. Please try again later.</p>`;
     }
 }
 
@@ -233,7 +257,7 @@ function initResultsPage() {
 
     results.forEach(result => {
         const item = document.createElement('div');
-        item.className = 'summary-item';
+        item.className = `summary-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
         item.innerHTML = `
             <p><strong>Q:</strong> ${result.question}</p>
             <p class="user-answer ${result.isCorrect ? 'correct' : 'incorrect'}">Your answer: ${result.selectedAnswer}</p>
@@ -259,6 +283,11 @@ function initResultsPage() {
 }
 
 async function getAIFeedback(incorrectAnswers) {
+    if (!ai) {
+        alert("API key is not set up. Cannot get AI feedback.");
+        return;
+    }
+
     const feedbackContainer = document.getElementById('ai-feedback-container');
     const feedbackContent = document.getElementById('ai-feedback-content');
     const feedbackButton = document.getElementById('ai-feedback-button');
@@ -269,9 +298,9 @@ async function getAIFeedback(incorrectAnswers) {
     
     try {
         const prompt = `
-            I'm studying AI and took a quiz. I got the following questions wrong. 
+            I'm studying and took a quiz. I got the following questions wrong. 
             Can you please explain the concepts behind each question and why the correct answer is right? 
-            Keep the explanations concise and easy to understand for a beginner.
+            Keep the explanations concise, easy to understand for a beginner, and format the response nicely. Use markdown. For each question, provide a section with a heading.
 
             Here are my mistakes:
             ${incorrectAnswers.map(item => `
@@ -286,7 +315,15 @@ async function getAIFeedback(incorrectAnswers) {
             contents: prompt,
         });
         
-        feedbackContent.textContent = response.text;
+        // A simple markdown to HTML converter
+        let html = response.text;
+        html = html.replace(/(\*\*|__)(.*?)\1/g, '<strong>$2</strong>'); // Bold
+        html = html.replace(/(\*|_)(.*?)\1/g, '<em>$2</em>'); // Italic
+        html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>'); // Code blocks
+        html = html.replace(/`(.*?)`/g, '<code>$1</code>'); // Inline code
+        html = html.replace(/\n/g, '<br>'); // Newlines
+
+        feedbackContent.innerHTML = html;
 
     } catch (error) {
         console.error('Gemini API error:', error);

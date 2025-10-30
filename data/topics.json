@@ -1,6 +1,46 @@
 {
   "topics": [
     {
+      "id": "islamic-quiz",
+      "title": "Islamic Quiz",
+      "description": "Test your knowledge of Islamic history, principles, and culture."
+    },
+    {
+      "id": "biology",
+      "title": "Biology",
+      "description": "Explore the science of life, from microscopic cells to vast ecosystems."
+    },
+    {
+      "id": "ai-robotics",
+      "title": "AI & Robotics",
+      "description": "Delve into the world of intelligent machines and autonomous systems."
+    },
+    {
+      "id": "programming",
+      "title": "Programming",
+      "description": "Challenge your understanding of code, logic, and software."
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "description": "Unravel the fundamental principles governing the universe."
+    },
+    {
+      "id": "chemistry",
+      "title": "Chemistry",
+      "description": "Discover the composition, properties, and behavior of matter."
+    },
+    {
+      "id": "mathematics",
+      "title": "Mathematics",
+      "description": "Engage with the abstract science of numbers, quantity, and space."
+    },
+    {
+      "id": "space-astronomy",
+      "title": "Space & Astronomy",
+      "description": "Journey through the cosmos and explore celestial objects."
+    },
+    {
       "id": "ai-fundamentals",
       "title": "AI Fundamentals",
       "description": "Explore the core concepts and history of Artificial Intelligence."
@@ -8,7 +48,7 @@
     {
       "id": "machine-learning",
       "title": "Machine Learning",
-      "description": "Dive into the algorithms and models that enable systems to learn from data."
+      "description": "Dive into algorithms that enable systems to learn from data."
     },
     {
       "id": "deep-learning",

@@ -1,4 +1,212 @@
 {
+  "islamic-quiz": {
+    "title": "Islamic Quiz",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Foundations",
+        "questions": [
+          {
+            "question": "How many pillars are there in Islam?",
+            "options": ["3", "5", "7", "10"],
+            "answer": "5"
+          },
+          {
+            "question": "What is the holy book of Islam?",
+            "options": ["The Torah", "The Bible", "The Quran", "The Vedas"],
+            "answer": "The Quran"
+          },
+          {
+            "question": "In which city was Prophet Muhammad (PBUH) born?",
+            "options": ["Medina", "Jerusalem", "Mecca", "Cairo"],
+            "answer": "Mecca"
+          }
+        ]
+      }
+    ]
+  },
+  "biology": {
+    "title": "Biology",
+    "levels": [
+      {
+        "level": 1,
+        "title": "The Cell",
+        "questions": [
+          {
+            "question": "What is the powerhouse of the cell?",
+            "options": ["Nucleus", "Ribosome", "Mitochondrion", "Cell Membrane"],
+            "answer": "Mitochondrion"
+          },
+          {
+            "question": "Which of these is not found in an animal cell?",
+            "options": ["Cytoplasm", "Cell Wall", "Vacuole", "Nucleus"],
+            "answer": "Cell Wall"
+          },
+          {
+            "question": "What does DNA stand for?",
+            "options": ["Deoxyribonucleic Acid", "Dinitrogen Acid", "Duonucleic Acid", "Deoxyribo Nutrient Acid"],
+            "answer": "Deoxyribonucleic Acid"
+          }
+        ]
+      }
+    ]
+  },
+  "ai-robotics": {
+    "title": "AI & Robotics",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Basics",
+        "questions": [
+          {
+            "question": "What is an 'actuator' in a robot?",
+            "options": ["A sensor for detecting light", "The robot's central processor", "A component that produces motion", "A communication device"],
+            "answer": "A component that produces motion"
+          },
+          {
+            "question": "Which of these is a primary goal of robotics?",
+            "options": ["To create art", "To perform tasks autonomously", "To replace all human jobs", "To only exist in science fiction"],
+            "answer": "To perform tasks autonomously"
+          },
+          {
+            "question": "What are the 'Three Laws of Robotics' famously written by?",
+            "options": ["Alan Turing", "Isaac Asimov", "Albert Einstein", "Arthur C. Clarke"],
+            "answer": "Isaac Asimov"
+          }
+        ]
+      }
+    ]
+  },
+  "programming": {
+    "title": "Programming",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Fundamentals",
+        "questions": [
+          {
+            "question": "What does the acronym 'HTML' stand for?",
+            "options": ["Hyper Text Markup Language", "High Tech Modern Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
+            "answer": "Hyper Text Markup Language"
+          },
+          {
+            "question": "In programming, what is a 'loop' used for?",
+            "options": ["To stop the program", "To make decisions", "To store data", "To repeat a block of code"],
+            "answer": "To repeat a block of code"
+          },
+          {
+            "question": "Which of the following is a programming language?",
+            "options": ["JPEG", "Python", "HTML", "HTTP"],
+            "answer": "Python"
+          }
+        ]
+      }
+    ]
+  },
+  "physics": {
+    "title": "Physics",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Classical Mechanics",
+        "questions": [
+          {
+            "question": "Which of Newton's laws is also known as the law of inertia?",
+            "options": ["First Law", "Second Law", "Third Law", "Law of Gravitation"],
+            "answer": "First Law"
+          },
+          {
+            "question": "What is the unit of force?",
+            "options": ["Joule", "Watt", "Newton", "Pascal"],
+            "answer": "Newton"
+          },
+          {
+            "question": "Which of these is a vector quantity?",
+            "options": ["Speed", "Mass", "Time", "Velocity"],
+            "answer": "Velocity"
+          }
+        ]
+      }
+    ]
+  },
+  "chemistry": {
+    "title": "Chemistry",
+    "levels": [
+      {
+        "level": 1,
+        "title": "The Atom",
+        "questions": [
+          {
+            "question": "What is the chemical symbol for Gold?",
+            "options": ["Ag", "Au", "Go", "Gd"],
+            "answer": "Au"
+          },
+          {
+            "question": "Which particle is found in the nucleus of an atom and has a positive charge?",
+            "options": ["Electron", "Neutron", "Proton", "Photon"],
+            "answer": "Proton"
+          },
+          {
+            "question": "What is H₂O commonly known as?",
+            "options": ["Salt", "Sugar", "Water", "Hydrogen Peroxide"],
+            "answer": "Water"
+          }
+        ]
+      }
+    ]
+  },
+  "mathematics": {
+    "title": "Mathematics",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Basics",
+        "questions": [
+          {
+            "question": "What is the value of Pi (π) to two decimal places?",
+            "options": ["3.12", "3.14", "3.16", "3.18"],
+            "answer": "3.14"
+          },
+          {
+            "question": "A triangle with three equal sides is called what?",
+            "options": ["Isosceles", "Scalene", "Right-angled", "Equilateral"],
+            "answer": "Equilateral"
+          },
+          {
+            "question": "What is 15% of 200?",
+            "options": ["15", "20", "30", "40"],
+            "answer": "30"
+          }
+        ]
+      }
+    ]
+  },
+  "space-astronomy": {
+    "title": "Space & Astronomy",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Our Solar System",
+        "questions": [
+          {
+            "question": "Which is the largest planet in our solar system?",
+            "options": ["Saturn", "Earth", "Jupiter", "Neptune"],
+            "answer": "Jupiter"
+          },
+          {
+            "question": "What is the name of the galaxy we live in?",
+            "options": ["Andromeda", "Triangulum", "Whirlpool", "Milky Way"],
+            "answer": "Milky Way"
+          },
+          {
+            "question": "Which planet is known as the 'Red Planet'?",
+            "options": ["Venus", "Mars", "Mercury", "Uranus"],
+            "answer": "Mars"
+          }
+        ]
+      }
+    ]
+  },
   "ai-fundamentals": {
     "title": "AI Fundamentals",
     "levels": [

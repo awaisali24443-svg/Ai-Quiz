@@ -1,20 +1,14 @@
 {
-  "name": "app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "ai-knowledge-hub",
+  "version": "1.0.0",
+  "description": "A multi-section quiz website with a dark cyber theme.",
+  "main": "js/app.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "live-server --port=8080"
   },
-  "dependencies": {
-    "@google/genai": "latest"
-  },
+  "author": "Gemini",
+  "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "live-server": "^1.2.2"
   }
 }
