@@ -42,18 +42,21 @@
             <h2 id="result-message" class="result-message">Quiz Complete!</h2>
             <p class="score-text">You scored</p>
             <p id="final-score" class="final-score">0/0</p>
+            <div class="results-actions">
+                <button id="retry-button" class="btn btn-secondary">Retry Level</button>
+                <button id="next-level-button" class="btn btn-primary">Next Level</button>
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
             <div class="results-summary" id="results-summary">
                 <!-- Summary of answers will be populated here -->
             </div>
-            <div class="results-actions">
-                <button id="ai-feedback-button" class="btn btn-secondary">Get AI Feedback on Mistakes</button>
-                <button id="play-again-button" class="btn btn-primary">Play Again</button>
-                <a href="index.html" class="btn btn-outline">Back to Home</a>
-            </div>
-            <div id="ai-feedback-container" class="ai-feedback" hidden>
-                <h4>Gemini's Feedback</h4>
-                <div id="ai-feedback-content" class="ai-feedback-content">
-                    <!-- AI feedback will be loaded here -->
+            <div id="ai-feedback-container">
+                 <button id="ai-feedback-button" class="btn btn-outline">Get AI Feedback on Mistakes</button>
+                 <div id="ai-feedback-content-wrapper" class="ai-feedback" hidden>
+                    <h4>Gemini's Feedback</h4>
+                    <div id="ai-feedback-content" class="ai-feedback-content">
+                        <!-- AI feedback will be loaded here -->
+                    </div>
                 </div>
             </div>
         </div>

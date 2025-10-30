@@ -1,59 +1,54 @@
 {
   "topics": [
     {
-      "id": "islamic-quiz",
-      "title": "Islamic Quiz",
-      "description": "Test your knowledge of Islamic history, principles, and culture."
-    },
-    {
-      "id": "biology",
-      "title": "Biology",
-      "description": "Explore the science of life, from microscopic cells to vast ecosystems."
-    },
-    {
-      "id": "ai-robotics",
-      "title": "AI & Robotics",
-      "description": "Delve into the world of intelligent machines and autonomous systems."
-    },
-    {
-      "id": "programming",
-      "title": "Programming",
+      "id": "programming-knowledge",
+      "title": "Programming Knowledge",
       "description": "Challenge your understanding of code, logic, and software."
     },
     {
-      "id": "physics",
-      "title": "Physics",
-      "description": "Unravel the fundamental principles governing the universe."
+      "id": "biological-knowledge",
+      "title": "Biological Knowledge",
+      "description": "Explore the science of life, from microscopic cells to vast ecosystems."
     },
     {
-      "id": "chemistry",
-      "title": "Chemistry",
-      "description": "Discover the composition, properties, and behavior of matter."
+      "id": "world-knowledge",
+      "title": "World Knowledge",
+      "description": "Test your general knowledge about our diverse and fascinating world."
     },
     {
-      "id": "mathematics",
-      "title": "Mathematics",
-      "description": "Engage with the abstract science of numbers, quantity, and space."
+      "id": "space-universe",
+      "title": "Space & Universe",
+      "description": "Journey through the cosmos and explore celestial objects and phenomena."
     },
     {
-      "id": "space-astronomy",
-      "title": "Space & Astronomy",
-      "description": "Journey through the cosmos and explore celestial objects."
+      "id": "artificial-intelligence",
+      "title": "Artificial Intelligence",
+      "description": "Delve into the world of intelligent machines, algorithms, and data."
     },
     {
-      "id": "ai-fundamentals",
-      "title": "AI Fundamentals",
-      "description": "Explore the core concepts and history of Artificial Intelligence."
+      "id": "tech-innovation",
+      "title": "Technology & Innovation",
+      "description": "Discover the breakthroughs and inventions shaping our digital future."
     },
     {
-      "id": "machine-learning",
-      "title": "Machine Learning",
-      "description": "Dive into algorithms that enable systems to learn from data."
+      "id": "history-civilization",
+      "title": "History & Civilization",
+      "description": "Unravel the stories and pivotal events that have shaped humanity."
     },
     {
-      "id": "deep-learning",
-      "title": "Deep Learning",
-      "description": "Uncover the power of neural networks and complex architectures."
+      "id": "scientific-knowledge",
+      "title": "Scientific Knowledge",
+      "description": "Engage with fundamental principles from various fields of science."
+    },
+    {
+      "id": "islamic-knowledge",
+      "title": "Islamic Knowledge",
+      "description": "Deepen your understanding of Islamic history, principles, and culture."
+    },
+    {
+      "id": "global-quiz-arena",
+      "title": "Global Quiz Arena",
+      "description": "A challenging mix of questions from all topics for the ultimate test."
     }
   ]
 }

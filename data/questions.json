@@ -1,351 +1,72 @@
 {
-  "islamic-quiz": {
-    "title": "Islamic Quiz",
+  "programming-knowledge": {
+    "title": "Programming Knowledge",
     "levels": [
-      {
-        "level": 1,
-        "title": "Foundations",
-        "questions": [
-          {
-            "question": "How many pillars are there in Islam?",
-            "options": ["3", "5", "7", "10"],
-            "answer": "5"
-          },
-          {
-            "question": "What is the holy book of Islam?",
-            "options": ["The Torah", "The Bible", "The Quran", "The Vedas"],
-            "answer": "The Quran"
-          },
-          {
-            "question": "In which city was Prophet Muhammad (PBUH) born?",
-            "options": ["Medina", "Jerusalem", "Mecca", "Cairo"],
-            "answer": "Mecca"
-          }
-        ]
-      }
+      {"level": 1, "title": "Fundamentals", "questions": [{"question": "What does 'API' stand for?", "options": ["Application Programming Interface", "Advanced Program Instruction", "Automated Programming Inc.", "Application Process Information"], "answer": "Application Programming Interface"}, {"question": "In JavaScript, which symbol is used for a single-line comment?", "options": ["//", "/* */", "#", "<!-- -->"], "answer": "//"}, {"question": "Which data structure uses a 'First-In, First-Out' (FIFO) approach?", "options": ["Stack", "Queue", "Array", "Tree"], "answer": "Queue"}, {"question": "What is the time complexity of a binary search algorithm?", "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"], "answer": "O(log n)"}, {"question": "Which of these is NOT a primitive data type in JavaScript?", "options": ["String", "Number", "Object", "Boolean"], "answer": "Object"}]},
+      {"level": 2, "title": "Data Structures", "questions": []}, {"level": 3, "title": "Algorithms", "questions": []}, {"level": 4, "title": "Web Concepts", "questions": []}, {"level": 5, "title": "OOP Principles", "questions": []}, {"level": 6, "title": "Version Control", "questions": []}, {"level": 7, "title": "Databases", "questions": []}, {"level": 8, "title": "Functional Programming", "questions": []}, {"level": 9, "title": "Software Design", "questions": []}, {"level": 10, "title": "Testing", "questions": []}, {"level": 11, "title": "Security Basics", "questions": []}, {"level": 12, "title": "Cloud Computing", "questions": []}, {"level": 13, "title": "DevOps", "questions": []}, {"level": 14, "title": "Mobile Development", "questions": []}, {"level": 15, "title": "Advanced JavaScript", "questions": []}, {"level": 16, "title": "Python Ecosystem", "questions": []}, {"level": 17, "title": "C++ Concepts", "questions": []}, {"level": 18, "title": "Low-Level Systems", "questions": []}, {"level": 19, "title": "Machine Learning APIs", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "biology": {
-    "title": "Biology",
+  "biological-knowledge": {
+    "title": "Biological Knowledge",
     "levels": [
-      {
-        "level": 1,
-        "title": "The Cell",
-        "questions": [
-          {
-            "question": "What is the powerhouse of the cell?",
-            "options": ["Nucleus", "Ribosome", "Mitochondrion", "Cell Membrane"],
-            "answer": "Mitochondrion"
-          },
-          {
-            "question": "Which of these is not found in an animal cell?",
-            "options": ["Cytoplasm", "Cell Wall", "Vacuole", "Nucleus"],
-            "answer": "Cell Wall"
-          },
-          {
-            "question": "What does DNA stand for?",
-            "options": ["Deoxyribonucleic Acid", "Dinitrogen Acid", "Duonucleic Acid", "Deoxyribo Nutrient Acid"],
-            "answer": "Deoxyribonucleic Acid"
-          }
-        ]
-      }
+      {"level": 1, "title": "The Cell & Genetics", "questions": [{"question": "What is the process by which plants make their own food using sunlight?", "options": ["Respiration", "Transpiration", "Photosynthesis", "Germination"], "answer": "Photosynthesis"}, {"question": "Which organelle is known as the 'powerhouse' of the cell?", "options": ["Nucleus", "Ribosome", "Mitochondrion", "Chloroplast"], "answer": "Mitochondrion"}, {"question": "How many chromosomes are in a typical human cell?", "options": ["23", "46", "64", "12"], "answer": "46"}, {"question": "What molecule carries the genetic instructions for all known organisms?", "options": ["RNA", "Protein", "ATP", "DNA"], "answer": "DNA"}, {"question": "Which of these is a part of the central nervous system?", "options": ["Femur", "Spinal Cord", "Bicep", "Kidney"], "answer": "Spinal Cord"}]},
+      {"level": 2, "title": "Anatomy", "questions": []}, {"level": 3, "title": "Botany", "questions": []}, {"level": 4, "title": "Ecology", "questions": []}, {"level": 5, "title": "Evolution", "questions": []}, {"level": 6, "title": "Microbiology", "questions": []}, {"level": 7, "title": "Zoology", "questions": []}, {"level": 8, "title": "Marine Biology", "questions": []}, {"level": 9, "title": "Genetics II", "questions": []}, {"level": 10, "title": "Biochemistry", "questions": []}, {"level": 11, "title": "Immunology", "questions": []}, {"level": 12, "title": "Neuroscience", "questions": []}, {"level": 13, "title": "Pathology", "questions": []}, {"level": 14, "title": "Pharmacology", "questions": []}, {"level": 15, "title": "Physiology", "questions": []}, {"level": 16, "title": "Virology", "questions": []}, {"level": 17, "title": "Biotechnology", "questions": []}, {"level": 18, "title": "Conservation", "questions": []}, {"level": 19, "title": "Paleontology", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "ai-robotics": {
-    "title": "AI & Robotics",
+  "world-knowledge": {
+    "title": "World Knowledge",
     "levels": [
-      {
-        "level": 1,
-        "title": "Basics",
-        "questions": [
-          {
-            "question": "What is an 'actuator' in a robot?",
-            "options": ["A sensor for detecting light", "The robot's central processor", "A component that produces motion", "A communication device"],
-            "answer": "A component that produces motion"
-          },
-          {
-            "question": "Which of these is a primary goal of robotics?",
-            "options": ["To create art", "To perform tasks autonomously", "To replace all human jobs", "To only exist in science fiction"],
-            "answer": "To perform tasks autonomously"
-          },
-          {
-            "question": "What are the 'Three Laws of Robotics' famously written by?",
-            "options": ["Alan Turing", "Isaac Asimov", "Albert Einstein", "Arthur C. Clarke"],
-            "answer": "Isaac Asimov"
-          }
-        ]
-      }
+      {"level": 1, "title": "Capitals & Geography", "questions": [{"question": "What is the capital of Japan?", "options": ["Kyoto", "Osaka", "Tokyo", "Hiroshima"], "answer": "Tokyo"}, {"question": "Which is the longest river in the world?", "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"], "answer": "Nile River"}, {"question": "Mount Everest is located in which mountain range?", "options": ["The Andes", "The Rockies", "The Alps", "The Himalayas"], "answer": "The Himalayas"}, {"question": "Which country is known as the Land of the Midnight Sun?", "options": ["Norway", "Australia", "Brazil", "Egypt"], "answer": "Norway"}, {"question": "What is the largest desert in the world?", "options": ["Sahara Desert", "Gobi Desert", "Arabian Desert", "Antarctic Polar Desert"], "answer": "Antarctic Polar Desert"}]},
+      {"level": 2, "title": "Famous Landmarks", "questions": []}, {"level": 3, "title": "World Flags", "questions": []}, {"level": 4, "title": "Cultures & Traditions", "questions": []}, {"level": 5, "title": "Global Cuisine", "questions": []}, {"level": 6, "title": "Languages", "questions": []}, {"level": 7, "title": "Currencies", "questions": []}, {"level": 8, "title": "Mythology", "questions": []}, {"level": 9, "title": "Politics & Leaders", "questions": []}, {"level": 10, "title": "World Records", "questions": []}, {"level": 11, "title": "Inventions", "questions": []}, {"level": 12, "title": "Music & Arts", "questions": []}, {"level": 13, "title": "Literature", "questions": []}, {"level": 14, "title": "Sports", "questions": []}, {"level": 15, "title": "Modern Events", "questions": []}, {"level": 16, "title": "Economics", "questions": []}, {"level": 17, "title": "Demographics", "questions": []}, {"level": 18, "title": "International Law", "questions": []}, {"level": 19, "title": "UN & Organizations", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "programming": {
-    "title": "Programming",
+  "space-universe": {
+    "title": "Space & Universe",
     "levels": [
-      {
-        "level": 1,
-        "title": "Fundamentals",
-        "questions": [
-          {
-            "question": "What does the acronym 'HTML' stand for?",
-            "options": ["Hyper Text Markup Language", "High Tech Modern Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
-            "answer": "Hyper Text Markup Language"
-          },
-          {
-            "question": "In programming, what is a 'loop' used for?",
-            "options": ["To stop the program", "To make decisions", "To store data", "To repeat a block of code"],
-            "answer": "To repeat a block of code"
-          },
-          {
-            "question": "Which of the following is a programming language?",
-            "options": ["JPEG", "Python", "HTML", "HTTP"],
-            "answer": "Python"
-          }
-        ]
-      }
+      {"level": 1, "title": "Our Solar System", "questions": [{"question": "Which planet is known as the 'Red Planet'?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "answer": "Mars"}, {"question": "What is a 'light-year' a measure of?", "options": ["Time", "Distance", "Brightness", "Speed"], "answer": "Distance"}, {"question": "What is the name of the galaxy containing our Solar System?", "options": ["Andromeda", "Triangulum", "Whirlpool", "Milky Way"], "answer": "Milky Way"}, {"question": "Which planet is the largest in our solar system?", "options": ["Saturn", "Neptune", "Jupiter", "Earth"], "answer": "Jupiter"}, {"question": "What is the center of our solar system?", "options": ["The Earth", "A black hole", "The Sun", "The Moon"], "answer": "The Sun"}]},
+      {"level": 2, "title": "Stars & Galaxies", "questions": []}, {"level": 3, "title": "Astronomy Tools", "questions": []}, {"level": 4, "title": "Space Exploration", "questions": []}, {"level": 5, "title": "Cosmology", "questions": []}, {"level": 6, "title": "Astrophysics", "questions": []}, {"level": 7, "title": "Exoplanets", "questions": []}, {"level": 8, "title": "Black Holes", "questions": []}, {"level": 9, "title": "Nebulae", "questions": []}, {"level": 10, "title": "Constellations", "questions": []}, {"level": 11, "title": "Moons of the Solar System", "questions": []}, {"level": 12, "title": "Asteroids & Comets", "questions": []}, {"level": 13, "title": "Relativity", "questions": []}, {"level": 14, "title": "Quantum Mechanics", "questions": []}, {"level": 15, "title": "Dark Matter", "questions": []}, {"level": 16, "title": "Dark Energy", "questions": []}, {"level": 17, "title": "The Big Bang", "questions": []}, {"level": 18, "title": "Famous Astronomers", "questions": []}, {"level": 19, "title": "Future of Space Travel", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "physics": {
-    "title": "Physics",
+  "artificial-intelligence": {
+    "title": "Artificial Intelligence",
     "levels": [
-      {
-        "level": 1,
-        "title": "Classical Mechanics",
-        "questions": [
-          {
-            "question": "Which of Newton's laws is also known as the law of inertia?",
-            "options": ["First Law", "Second Law", "Third Law", "Law of Gravitation"],
-            "answer": "First Law"
-          },
-          {
-            "question": "What is the unit of force?",
-            "options": ["Joule", "Watt", "Newton", "Pascal"],
-            "answer": "Newton"
-          },
-          {
-            "question": "Which of these is a vector quantity?",
-            "options": ["Speed", "Mass", "Time", "Velocity"],
-            "answer": "Velocity"
-          }
-        ]
-      }
+      {"level": 1, "title": "Core Concepts", "questions": [{"question": "Who is often called the 'father of Artificial Intelligence'?", "options": ["Alan Turing", "John McCarthy", "Geoffrey Hinton", "Tim Berners-Lee"], "answer": "John McCarthy"}, {"question": "What is the goal of the Turing Test?", "options": ["To test a computer's processing speed", "To test a machine's ability to exhibit human-like intelligence", "To test a computer's memory", "To test the strength of an AI's code"], "answer": "To test a machine's ability to exhibit human-like intelligence"}, {"question": "Which of these is a subfield of AI?", "options": ["Graphic Design", "Machine Learning", "Quantum Physics", "Marine Biology"], "answer": "Machine Learning"}, {"question": "What does 'NLP' stand for in the context of AI?", "options": ["Natural Language Processing", "Non-linear Programming", "New Logic Paradigm", "Neural Link Protocol"], "answer": "Natural Language Processing"}, {"question": "An AI designed for one specific task is known as...", "options": ["General AI", "Super AI", "Narrow AI", "Conscious AI"], "answer": "Narrow AI"}]},
+      {"level": 2, "title": "Machine Learning", "questions": []}, {"level": 3, "title": "Neural Networks", "questions": []}, {"level": 4, "title": "Deep Learning", "questions": []}, {"level": 5, "title": "Computer Vision", "questions": []}, {"level": 6, "title": "Natural Language Processing II", "questions": []}, {"level": 7, "title": "Reinforcement Learning", "questions": []}, {"level": 8, "title": "AI Ethics", "questions": []}, {"level": 9, "title": "Robotics", "questions": []}, {"level": 10, "title": "Expert Systems", "questions": []}, {"level": 11, "title": "Genetic Algorithms", "questions": []}, {"level": 12, "title": "Fuzzy Logic", "questions": []}, {"level": 13, "title": "Knowledge Representation", "questions": []}, {"level": 14, "title": "Search Algorithms", "questions": []}, {"level": 15, "title": "Supervised Learning", "questions": []}, {"level": 16, "title": "Unsupervised Learning", "questions": []}, {"level": 17, "title": "Generative AI", "questions": []}, {"level": 18, "title": "Large Language Models", "questions": []}, {"level": 19, "title": "History of AI", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "chemistry": {
-    "title": "Chemistry",
+  "tech-innovation": {
+    "title": "Technology & Innovation",
     "levels": [
-      {
-        "level": 1,
-        "title": "The Atom",
-        "questions": [
-          {
-            "question": "What is the chemical symbol for Gold?",
-            "options": ["Ag", "Au", "Go", "Gd"],
-            "answer": "Au"
-          },
-          {
-            "question": "Which particle is found in the nucleus of an atom and has a positive charge?",
-            "options": ["Electron", "Neutron", "Proton", "Photon"],
-            "answer": "Proton"
-          },
-          {
-            "question": "What is H₂O commonly known as?",
-            "options": ["Salt", "Sugar", "Water", "Hydrogen Peroxide"],
-            "answer": "Water"
-          }
-        ]
-      }
+      {"level": 1, "title": "Modern Tech", "questions": [{"question": "What does 'URL' stand for?", "options": ["Universal Resource Locator", "Uniform Resource Locator", "Unified Resource Link", "Universal Reference Link"], "answer": "Uniform Resource Locator"}, {"question": "Who is the co-founder of Microsoft, along with Bill Gates?", "options": ["Steve Jobs", "Steve Wozniak", "Paul Allen", "Larry Ellison"], "answer": "Paul Allen"}, {"question": "What technology is used to make wireless payments with a smartphone?", "options": ["Bluetooth", "NFC", "GPS", "LTE"], "answer": "NFC"}, {"question": "In what decade was the World Wide Web invented?", "options": ["1970s", "1980s", "1990s", "2000s"], "answer": "1990s"}, {"question": "What does 'GPU' stand for in computing?", "options": ["Graphics Processing Unit", "General Purpose Unit", "Gaming Performance Utility", "Global Positioning Unit"], "answer": "Graphics Processing Unit"}]},
+      {"level": 2, "title": "Internet & Networking", "questions": []}, {"level": 3, "title": "Hardware", "questions": []}, {"level": 4, "title": "Software", "questions": []}, {"level": 5, "title": "Cybersecurity", "questions": []}, {"level": 6, "title": "Blockchain & Crypto", "questions": []}, {"level": 7, "title": "Cloud Computing", "questions": []}, {"level": 8, "title": "Mobile Technology", "questions": []}, {"level": 9, "title": "Gaming Technology", "questions": []}, {"level": 10, "title": "AR & VR", "questions": []}, {"level": 11, "title": "IoT", "questions": []}, {"level": 12, "title": "3D Printing", "questions": []}, {"level": 13, "title": "Renewable Energy Tech", "questions": []}, {"level": 14, "title": "Biotechnology", "questions": []}, {"level": 15, "title": "Quantum Computing", "questions": []}, {"level": 16, "title": "Tech Pioneers", "questions": []}, {"level": 17, "title": "Tech Companies", "questions": []}, {"level": 18, "title": "Future Tech", "questions": []}, {"level": 19, "title": "Tech Ethics", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "mathematics": {
-    "title": "Mathematics",
+  "history-civilization": {
+    "title": "History & Civilization",
     "levels": [
-      {
-        "level": 1,
-        "title": "Basics",
-        "questions": [
-          {
-            "question": "What is the value of Pi (π) to two decimal places?",
-            "options": ["3.12", "3.14", "3.16", "3.18"],
-            "answer": "3.14"
-          },
-          {
-            "question": "A triangle with three equal sides is called what?",
-            "options": ["Isosceles", "Scalene", "Right-angled", "Equilateral"],
-            "answer": "Equilateral"
-          },
-          {
-            "question": "What is 15% of 200?",
-            "options": ["15", "20", "30", "40"],
-            "answer": "30"
-          }
-        ]
-      }
+      {"level": 1, "title": "Ancient World", "questions": [{"question": "In which ancient civilization were hieroglyphics used?", "options": ["Ancient Rome", "Ancient Greece", "Ancient Egypt", "Mesopotamia"], "answer": "Ancient Egypt"}, {"question": "The Great Wall of China was primarily built to...", "options": ["Be a tourist attraction", "Serve as a road", "Protect against invasions", "Mark a border"], "answer": "Protect against invasions"}, {"question": "Who was the first Roman Emperor?", "options": ["Julius Caesar", "Nero", "Augustus", "Constantine"], "answer": "Augustus"}, {"question": "The ancient city of Troy is located in which modern-day country?", "options": ["Greece", "Italy", "Egypt", "Turkey"], "answer": "Turkey"}, {"question": "What was the primary language of the Roman Empire?", "options": ["Greek", "Latin", "Italian", "English"], "answer": "Latin"}]},
+      {"level": 2, "title": "Medieval Period", "questions": []}, {"level": 3, "title": "Renaissance", "questions": []}, {"level": 4, "title": "Age of Exploration", "questions": []}, {"level": 5, "title": "Revolutions", "questions": []}, {"level": 6, "title": "World War I", "questions": []}, {"level": 7, "title": "World War II", "questions": []}, {"level": 8, "title": "The Cold War", "questions": []}, {"level": 9, "title": "Modern History", "questions": []}, {"level": 10, "title": "American History", "questions": []}, {"level": 11, "title": "European History", "questions": []}, {"level": 12, "title": "Asian History", "questions": []}, {"level": 13, "title": "African History", "questions": []}, {"level": 14, "title": "South American History", "questions": []}, {"level": 15, "title": "Ancient Empires", "questions": []}, {"level": 16, "title": "Key Battles", "questions": []}, {"level": 17, "title": "Historical Figures", "questions": []}, {"level": 18, "title": "Political Ideologies", "questions": []}, {"level": 19, "title": "Historical Inventions", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "space-astronomy": {
-    "title": "Space & Astronomy",
+  "scientific-knowledge": {
+    "title": "Scientific Knowledge",
     "levels": [
-      {
-        "level": 1,
-        "title": "Our Solar System",
-        "questions": [
-          {
-            "question": "Which is the largest planet in our solar system?",
-            "options": ["Saturn", "Earth", "Jupiter", "Neptune"],
-            "answer": "Jupiter"
-          },
-          {
-            "question": "What is the name of the galaxy we live in?",
-            "options": ["Andromeda", "Triangulum", "Whirlpool", "Milky Way"],
-            "answer": "Milky Way"
-          },
-          {
-            "question": "Which planet is known as the 'Red Planet'?",
-            "options": ["Venus", "Mars", "Mercury", "Uranus"],
-            "answer": "Mars"
-          }
-        ]
-      }
+      {"level": 1, "title": "Fundamentals", "questions": [{"question": "What is the chemical symbol for water?", "options": ["O2", "CO2", "H2O", "NaCl"], "answer": "H2O"}, {"question": "Which of Newton's Laws states that 'for every action, there is an equal and opposite reaction'?", "options": ["First Law", "Second Law", "Third Law", "Law of Gravitation"], "answer": "Third Law"}, {"question": "What is the hardest known natural substance?", "options": ["Gold", "Iron", "Diamond", "Quartz"], "answer": "Diamond"}, {"question": "At what temperature Celsius does water boil at sea level?", "options": ["90°C", "100°C", "110°C", "120°C"], "answer": "100°C"}, {"question": "What force pulls objects toward the center of the Earth?", "options": ["Magnetism", "Gravity", "Friction", "Inertia"], "answer": "Gravity"}]},
+      {"level": 2, "title": "Physics", "questions": []}, {"level": 3, "title": "Chemistry", "questions": []}, {"level": 4, "title": "Geology", "questions": []}, {"level": 5, "title": "Meteorology", "questions": []}, {"level": 6, "title": "The Human Body", "questions": []}, {"level": 7, "title": "Periodic Table", "questions": []}, {"level": 8, "title": "Famous Scientists", "questions": []}, {"level": 9, "title": "Scientific Method", "questions": []}, {"level": 10, "title": "Energy & Matter", "questions": []}, {"level": 11, "title": "Light & Optics", "questions": []}, {"level": 12, "title": "Sound & Waves", "questions": []}, {"level": 13, "title": "Electricity & Magnetism", "questions": []}, {"level": 14, "title": "Thermodynamics", "questions": []}, {"level": 15, "title": "Scientific Units", "questions": []}, {"level": 16, "title": "Environmental Science", "questions": []}, {"level": 17, "title": "Nobel Prize Winners", "questions": []}, {"level": 18, "title": "Scientific Laws", "questions": []}, {"level": 19, "title": "Modern Discoveries", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "ai-fundamentals": {
-    "title": "AI Fundamentals",
+  "islamic-knowledge": {
+    "title": "Islamic Knowledge",
     "levels": [
-      {
-        "level": 1,
-        "title": "Beginner",
-        "questions": [
-          {
-            "question": "What does AI stand for?",
-            "options": ["Artificial Intelligence", "Automated Intelligence", "Algorithmic Inquiry", "Advanced Integration"],
-            "answer": "Artificial Intelligence"
-          },
-          {
-            "question": "Who is considered the 'father of Artificial Intelligence'?",
-            "options": ["Alan Turing", "John McCarthy", "Geoffrey Hinton", "Tim Berners-Lee"],
-            "answer": "John McCarthy"
-          },
-          {
-            "question": "Which of these is a common application of AI?",
-            "options": ["Virtual Personal Assistants", "Manual Data Entry", "Printing Documents", "Basic Calculators"],
-            "answer": "Virtual Personal Assistants"
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Intermediate",
-        "questions": [
-          {
-            "question": "What is the Turing Test used to measure?",
-            "options": ["A machine's processing speed", "A machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human", "A machine's storage capacity", "A machine's ability to perform complex calculations"],
-            "answer": "A machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human"
-          },
-          {
-            "question": "What is 'Weak AI' (or Narrow AI)?",
-            "options": ["AI that is physically weak", "AI that can outperform humans in all tasks", "AI designed and trained for a particular task", "AI that has not yet been fully developed"],
-            "answer": "AI designed and trained for a particular task"
-          },
-          {
-            "question": "Which programming language is most commonly associated with AI and Machine Learning?",
-            "options": ["Java", "C++", "Python", "JavaScript"],
-            "answer": "Python"
-          }
-        ]
-      }
+      {"level": 1, "title": "Foundations", "questions": [{"question": "How many pillars are there in Islam?", "options": ["3", "5", "7", "10"], "answer": "5"}, {"question": "What is the holy book of Islam?", "options": ["The Torah", "The Bible", "The Quran", "The Vedas"], "answer": "The Quran"}, {"question": "In which city was Prophet Muhammad (PBUH) born?", "options": ["Medina", "Jerusalem", "Mecca", "Cairo"], "answer": "Mecca"}, {"question": "What is the name of the Islamic month of fasting?", "options": ["Shawwal", "Ramadan", "Dhul Hijjah", "Muharram"], "answer": "Ramadan"}, {"question": "How many times a day are Muslims required to pray?", "options": ["3", "4", "5", "6"], "answer": "5"}]},
+      {"level": 2, "title": "Prophets", "questions": []}, {"level": 3, "title": "The Quran", "questions": []}, {"level": 4, "title": "Hadith", "questions": []}, {"level": 5, "title": "Seerah", "questions": []}, {"level": 6, "title": "Islamic History", "questions": []}, {"level": 7, "title": "Fiqh (Jurisprudence)", "questions": []}, {"level": 8, "title": "Aqeedah (Creed)", "questions": []}, {"level": 9, "title": "Companions of the Prophet", "questions": []}, {"level": 10, "title": "Islamic Empires", "questions": []}, {"level": 11, "title": "Islamic Art & Architecture", "questions": []}, {"level": 12, "title": "Islamic Science", "questions": []}, {"level": 13, "title": "Hajj & Umrah", "questions": []}, {"level": 14, "title": "Islamic Festivals", "questions": []}, {"level": 15, "title": "Women in Islam", "questions": []}, {"level": 16, "title": "Islamic Finance", "questions": []}, {"level": 17, "title": "Key Islamic Cities", "questions": []}, {"level": 18, "title": "Dua & Adhkar", "questions": []}, {"level": 19, "title": "Islamic Morals & Ethics", "questions": []}, {"level": 20, "title": "Expert Challenge", "questions": []}
     ]
   },
-  "machine-learning": {
-    "title": "Machine Learning",
+  "global-quiz-arena": {
+    "title": "Global Quiz Arena",
     "levels": [
-      {
-        "level": 1,
-        "title": "Beginner",
-        "questions": [
-          {
-            "question": "What is the primary goal of supervised learning?",
-            "options": ["To group unlabeled data", "To learn a mapping from inputs to outputs", "To learn through trial and error", "To find hidden patterns in data"],
-            "answer": "To learn a mapping from inputs to outputs"
-          },
-          {
-            "question": "Which of the following is an example of an unsupervised learning task?",
-            "options": ["Spam detection", "Image classification", "Customer segmentation", "Stock price prediction"],
-            "answer": "Customer segmentation"
-          },
-          {
-            "question": "What does a 'training set' refer to in machine learning?",
-            "options": ["The data used to test the model's performance", "The data used to train the model", "The hardware used to run the model", "A set of instructions for the model"],
-            "answer": "The data used to train the model"
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Intermediate",
-        "questions": [
-          {
-            "question": "What is 'overfitting' in the context of machine learning?",
-            "options": ["When a model performs well on new, unseen data", "When a model is too simple to capture the underlying trend of the data", "When a model performs very well on training data but poorly on new data", "When a model is trained for too long"],
-            "answer": "When a model performs very well on training data but poorly on new data"
-          },
-          {
-            "question": "Which algorithm is commonly used for classification tasks?",
-            "options": ["K-Means", "Linear Regression", "Logistic Regression", "Principal Component Analysis"],
-            "answer": "Logistic Regression"
-          },
-          {
-            "question": "What is reinforcement learning?",
-            "options": ["Learning from labeled data", "Learning from unlabeled data", "Learning through rewards and punishments for actions", "Learning by memorizing data"],
-            "answer": "Learning through rewards and punishments for actions"
-          }
-        ]
-      }
-    ]
-  },
-  "deep-learning": {
-    "title": "Deep Learning",
-    "levels": [
-      {
-        "level": 1,
-        "title": "Beginner",
-        "questions": [
-          {
-            "question": "Deep Learning is a subfield of which broader AI field?",
-            "options": ["Natural Language Processing", "Machine Learning", "Computer Vision", "Robotics"],
-            "answer": "Machine Learning"
-          },
-          {
-            "question": "What are the fundamental building blocks of a neural network?",
-            "options": ["Pixels", "Algorithms", "Neurons (or nodes)", "Data points"],
-            "answer": "Neurons (or nodes)"
-          },
-          {
-            "question": "What does the 'deep' in Deep Learning refer to?",
-            "options": ["The complexity of the problems it solves", "The large amount of data it requires", "The number of layers in the neural network", "The depth of knowledge of its creators"],
-            "answer": "The number of layers in the neural network"
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Intermediate",
-        "questions": [
-          {
-            "question": "What is an 'activation function' in a neural network?",
-            "options": ["A function that starts the training process", "A function that determines if a neuron should be activated or not", "A function that calculates the loss", "A function that normalizes the input data"],
-            "answer": "A function that determines if a neuron should be activated or not"
-          },
-          {
-            "question": "Which of these is a popular deep learning framework?",
-            "options": ["React", "TensorFlow", "Angular", "jQuery"],
-            "answer": "TensorFlow"
-          },
-          {
-            "question": "What is a Convolutional Neural Network (CNN) primarily used for?",
-            "options": ["Time-series analysis", "Text generation", "Image recognition and processing", "Recommender systems"],
-            "answer": "Image recognition and processing"
-          }
-        ]
-      }
+      {"level": 1, "title": "Mixed Bag I", "questions": [{"question": "Which artist painted the Mona Lisa?", "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"], "answer": "Leonardo da Vinci"}, {"question": "What is the capital of Canada?", "options": ["Toronto", "Vancouver", "Ottawa", "Montreal"], "answer": "Ottawa"}, {"question": "What is the main ingredient in guacamole?", "options": ["Tomato", "Avocado", "Onion", "Lime"], "answer": "Avocado"}, {"question": "Which element has the chemical symbol 'Fe'?", "options": ["Gold", "Silver", "Iron", "Fluorine"], "answer": "Iron"}, {"question": "In Greek mythology, who is the god of the sea?", "options": ["Zeus", "Hades", "Apollo", "Poseidon"], "answer": "Poseidon"}]},
+      {"level": 2, "title": "Mixed Bag II", "questions": []}, {"level": 3, "title": "Mixed Bag III", "questions": []}, {"level": 4, "title": "Mixed Bag IV", "questions": []}, {"level": 5, "title": "Mixed Bag V", "questions": []}, {"level": 6, "title": "Mixed Bag VI", "questions": []}, {"level": 7, "title": "Mixed Bag VII", "questions": []}, {"level": 8, "title": "Mixed Bag VIII", "questions": []}, {"level": 9, "title": "Mixed Bag IX", "questions": []}, {"level": 10, "title": "Mixed Bag X", "questions": []}, {"level": 11, "title": "Mixed Bag XI", "questions": []}, {"level": 12, "title": "Mixed Bag XII", "questions": []}, {"level": 13, "title": "Mixed Bag XIII", "questions": []}, {"level": 14, "title": "Mixed Bag XIV", "questions": []}, {"level": 15, "title": "Mixed Bag XV", "questions": []}, {"level": 16, "title": "Mixed Bag XVI", "questions": []}, {"level": 17, "title": "Mixed Bag XVII", "questions": []}, {"level": 18, "title": "Mixed Bag XVIII", "questions": []}, {"level": 19, "title": "Mixed Bag XIX", "questions": []}, {"level": 20, "title": "Final Challenge", "questions": []}
     ]
   }
 }
