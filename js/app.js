@@ -52,6 +52,7 @@ function initNav() {
     const currentPage = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll('.bottom-nav-link');
     navLinks.forEach(link => {
+        link.classList.remove('active'); // Reset all first
         const linkPage = link.getAttribute('href').split("/").pop();
         if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
             link.classList.add('active');
@@ -157,7 +158,7 @@ async function initLevelsPage() {
             if (isLocked) {
                 levelCard.classList.add('locked');
                 levelCard.setAttribute('aria-disabled', 'true');
-                levelCard.innerHTML = `<h3>Level ${i}</h3><p>Locked</p>`;
+                levelCard.innerHTML = `<h3>Level ${i}</h3><p>${levelInfo ? levelInfo.title : 'Challenge'}</p>`;
             } else {
                 levelCard.setAttribute('tabindex', '0');
                 levelCard.innerHTML = `<h3>Level ${i}</h3><p>${levelInfo ? levelInfo.title : 'Challenge'}</p>`;
@@ -374,19 +375,11 @@ function selectLevel(level) {
     window.location.href = 'quiz.html';
 }
 
-/**
- * Handles the logic for retrying the current level.
- * It reads the current level from localStorage and navigates back to the quiz page for that level.
- * This effectively resets the quiz state (score, timer, etc.) because the quiz page re-initializes itself on load.
- * The user's progress is updated on the results page after the retry attempt is completed.
- */
 function retryLevel() {
     const levelToRetry = localStorage.getItem('selectedLevel');
     if (levelToRetry) {
-        // Re-selecting the same level is all that's needed to restart it.
         selectLevel(levelToRetry);
     } else {
-        // Fallback: If level info is missing, go home.
         console.error("Could not determine level to retry. Navigating home.");
         window.location.href = 'index.html';
     }
@@ -421,7 +414,7 @@ async function getAIFeedback(incorrectAnswers) {
             `).join('')}
         `;
 
-        const response = await ai.models.generateContent({ model: "gem-pro", contents: prompt });
+        const response = await ai.models.generateContent({ model: "gemini-2.5-flash", contents: prompt });
         
         let html = response.text;
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');

@@ -307,6 +307,7 @@ img {
     text-align: center;
     cursor: pointer;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+    position: relative; /* For lock icon */
 }
 
 .level-card:hover:not(.locked) {
@@ -321,13 +322,26 @@ img {
     font-size: 1rem; color: var(--color-text-muted);
 }
 .level-card.locked {
-    cursor: not-allowed; color: var(--color-text-muted); background: rgba(42, 48, 67, 0.3);
+    cursor: not-allowed; 
+    color: var(--color-text-muted); 
+    background: rgba(42, 48, 67, 0.3);
+}
+.level-card.locked > * {
+    opacity: 0.5;
 }
 .level-card.locked:hover {
-    transform: none; box-shadow: none; border-color: var(--color-surface-light);
+    transform: none; 
+    box-shadow: none; 
+    border-color: var(--color-surface-light);
 }
 .level-card.locked::after {
-    content: '🔒'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0.3;
+    content: '🔒'; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 3rem; 
+    opacity: 0.3;
 }
 
 

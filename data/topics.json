@@ -3,55 +3,55 @@
     {
       "id": "programming-ai",
       "title": "Programming & AI",
-      "description": "Dive into algorithms, machine learning, and advanced coding concepts.",
+      "description": "Dive into algorithms, machine learning, and advanced coding concepts. Test your knowledge in Python, C++, and AI frameworks.",
       "image": "assets/images/topics/programming.jpg"
     },
     {
       "id": "biology-genetics",
       "title": "Biology & Genetics",
-      "description": "Explore the mysteries of life, from cellular structures to ecosystems.",
+      "description": "Explore the mysteries of life, from cellular structures to advanced genetic engineering and ecosystems. Test your biological insights.",
       "image": "assets/images/topics/biology.jpg"
     },
     {
       "id": "cosmology-space",
       "title": "Cosmology & Space",
-      "description": "Journey through the cosmos, studying black holes, distant galaxies, and the origins of the universe.",
+      "description": "Journey through the cosmos, studying black holes, distant galaxies, and the origins of the universe. Explore cosmic phenomena.",
       "image": "assets/images/topics/space.jpg"
     },
     {
       "id": "robotics-automation",
       "title": "Robotics & Automation",
-      "description": "Delve into the world of smart machines, automation principles, and future technological advancements.",
+      "description": "Delve into the world of smart machines, automation principles, and future technological advancements. Design and control robotic systems.",
       "image": "assets/images/topics/robotics.jpg"
     },
     {
       "id": "business-finance",
       "title": "Business & Finance",
-      "description": "Master economic theories, market trends, and strategic business management.",
+      "description": "Master economic theories, market trends, and strategic business management. Analyze financial data and investment strategies.",
       "image": "assets/images/topics/finance.jpg"
     },
     {
       "id": "arts-culture",
       "title": "Arts & Culture",
-      "description": "Explore art history, diverse cultural movements, and creative expressions across different civilizations.",
+      "description": "Explore art history, diverse cultural movements, and creative expressions across different civilizations. Uncover artistic legacies.",
       "image": "assets/images/topics/culture.jpg"
     },
     {
       "id": "medicine-health",
       "title": "Medicine & Health",
-      "description": "Understand human anatomy, physiology, and modern medical practices.",
+      "description": "Understand human anatomy, physiology, and modern medical practices. Explore diseases, treatments, and public health initiatives.",
       "image": "assets/images/topics/medicine.jpg"
     },
     {
       "id": "environment-ecology",
       "title": "Environment & Ecology",
-      "description": "Learn about environmental science, climate change, and sustainable practices.",
+      "description": "Learn about environmental science, climate change, and sustainable practices. Protect our planet and its biodiversity.",
       "image": "assets/images/topics/ecology.jpg"
     },
     {
       "id": "logic-philosophy",
       "title": "Logic & Philosophy",
-      "description": "Challenge your mind with logical puzzles, critical thinking, and fundamental questions.",
+      "description": "Challenge your mind with logical puzzles, critical thinking, and philosophical debates. Understand fundamental questions.",
       "image": "assets/images/topics/philosophy.jpg"
     }
   ]
