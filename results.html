@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Knowledge Hub - Results</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <header class="main-header">
+        <a href="index.html" class="logo-container" aria-label="Home">
+            <img src="assets/icons/logo.svg" alt="AI Knowledge Hub Logo" class="logo-icon">
+            <h1>AI Knowledge Hub</h1>
+        </a>
+         <nav>
+             <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="results-container">
+            <h2 id="result-message" class="result-message">Quiz Complete!</h2>
+            <p class="score-text">You scored</p>
+            <p id="final-score" class="final-score">0/0</p>
+            <div class="results-summary" id="results-summary">
+                <!-- Summary of answers will be populated here -->
+            </div>
+            <div class="results-actions">
+                <button id="ai-feedback-button" class="btn btn-secondary">Get AI Feedback on Mistakes</button>
+                <button id="play-again-button" class="btn btn-primary">Play Again</button>
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
+            <div id="ai-feedback-container" class="ai-feedback" hidden>
+                <h4>Gemini's Feedback</h4>
+                <div id="ai-feedback-content" class="ai-feedback-content">
+                    <!-- AI feedback will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 AI Knowledge Hub. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Twitter"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+            <a href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+    </footer>
+    
+    <script type="importmap">
+    {
+        "imports": {
+        "@google/genai": "https://esm.run/@google/genai"
+        }
+    }
+    </script>
+    <script type="module" src="js/app.js"></script>
+    <script src="js/background-effects.js"></script>
+</body>
+</html>

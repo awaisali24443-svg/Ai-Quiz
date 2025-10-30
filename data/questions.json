@@ -1,0 +1,143 @@
+{
+  "ai-fundamentals": {
+    "title": "AI Fundamentals",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Beginner",
+        "questions": [
+          {
+            "question": "What does AI stand for?",
+            "options": ["Artificial Intelligence", "Automated Intelligence", "Algorithmic Inquiry", "Advanced Integration"],
+            "answer": "Artificial Intelligence"
+          },
+          {
+            "question": "Who is considered the 'father of Artificial Intelligence'?",
+            "options": ["Alan Turing", "John McCarthy", "Geoffrey Hinton", "Tim Berners-Lee"],
+            "answer": "John McCarthy"
+          },
+          {
+            "question": "Which of these is a common application of AI?",
+            "options": ["Virtual Personal Assistants", "Manual Data Entry", "Printing Documents", "Basic Calculators"],
+            "answer": "Virtual Personal Assistants"
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Intermediate",
+        "questions": [
+          {
+            "question": "What is the Turing Test used to measure?",
+            "options": ["A machine's processing speed", "A machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human", "A machine's storage capacity", "A machine's ability to perform complex calculations"],
+            "answer": "A machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human"
+          },
+          {
+            "question": "What is 'Weak AI' (or Narrow AI)?",
+            "options": ["AI that is physically weak", "AI that can outperform humans in all tasks", "AI designed and trained for a particular task", "AI that has not yet been fully developed"],
+            "answer": "AI designed and trained for a particular task"
+          },
+          {
+            "question": "Which programming language is most commonly associated with AI and Machine Learning?",
+            "options": ["Java", "C++", "Python", "JavaScript"],
+            "answer": "Python"
+          }
+        ]
+      }
+    ]
+  },
+  "machine-learning": {
+    "title": "Machine Learning",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Beginner",
+        "questions": [
+          {
+            "question": "What is the primary goal of supervised learning?",
+            "options": ["To group unlabeled data", "To learn a mapping from inputs to outputs", "To learn through trial and error", "To find hidden patterns in data"],
+            "answer": "To learn a mapping from inputs to outputs"
+          },
+          {
+            "question": "Which of the following is an example of an unsupervised learning task?",
+            "options": ["Spam detection", "Image classification", "Customer segmentation", "Stock price prediction"],
+            "answer": "Customer segmentation"
+          },
+          {
+            "question": "What does a 'training set' refer to in machine learning?",
+            "options": ["The data used to test the model's performance", "The data used to train the model", "The hardware used to run the model", "A set of instructions for the model"],
+            "answer": "The data used to train the model"
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Intermediate",
+        "questions": [
+          {
+            "question": "What is 'overfitting' in the context of machine learning?",
+            "options": ["When a model performs well on new, unseen data", "When a model is too simple to capture the underlying trend of the data", "When a model performs very well on training data but poorly on new data", "When a model is trained for too long"],
+            "answer": "When a model performs very well on training data but poorly on new data"
+          },
+          {
+            "question": "Which algorithm is commonly used for classification tasks?",
+            "options": ["K-Means", "Linear Regression", "Logistic Regression", "Principal Component Analysis"],
+            "answer": "Logistic Regression"
+          },
+          {
+            "question": "What is reinforcement learning?",
+            "options": ["Learning from labeled data", "Learning from unlabeled data", "Learning through rewards and punishments for actions", "Learning by memorizing data"],
+            "answer": "Learning through rewards and punishments for actions"
+          }
+        ]
+      }
+    ]
+  },
+  "deep-learning": {
+    "title": "Deep Learning",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Beginner",
+        "questions": [
+          {
+            "question": "Deep Learning is a subfield of which broader AI field?",
+            "options": ["Natural Language Processing", "Machine Learning", "Computer Vision", "Robotics"],
+            "answer": "Machine Learning"
+          },
+          {
+            "question": "What are the fundamental building blocks of a neural network?",
+            "options": ["Pixels", "Algorithms", "Neurons (or nodes)", "Data points"],
+            "answer": "Neurons (or nodes)"
+          },
+          {
+            "question": "What does the 'deep' in Deep Learning refer to?",
+            "options": ["The complexity of the problems it solves", "The large amount of data it requires", "The number of layers in the neural network", "The depth of knowledge of its creators"],
+            "answer": "The number of layers in the neural network"
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Intermediate",
+        "questions": [
+          {
+            "question": "What is an 'activation function' in a neural network?",
+            "options": ["A function that starts the training process", "A function that determines if a neuron should be activated or not", "A function that calculates the loss", "A function that normalizes the input data"],
+            "answer": "A function that determines if a neuron should be activated or not"
+          },
+          {
+            "question": "Which of these is a popular deep learning framework?",
+            "options": ["React", "TensorFlow", "Angular", "jQuery"],
+            "answer": "TensorFlow"
+          },
+          {
+            "question": "What is a Convolutional Neural Network (CNN) primarily used for?",
+            "options": ["Time-series analysis", "Text generation", "Image recognition and processing", "Recommender systems"],
+            "answer": "Image recognition and processing"
+          }
+        ]
+      }
+    ]
+  }
+}

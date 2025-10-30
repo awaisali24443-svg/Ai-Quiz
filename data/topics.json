@@ -1,0 +1,19 @@
+{
+  "topics": [
+    {
+      "id": "ai-fundamentals",
+      "title": "AI Fundamentals",
+      "description": "Explore the core concepts and history of Artificial Intelligence."
+    },
+    {
+      "id": "machine-learning",
+      "title": "Machine Learning",
+      "description": "Dive into the algorithms and models that enable systems to learn from data."
+    },
+    {
+      "id": "deep-learning",
+      "title": "Deep Learning",
+      "description": "Uncover the power of neural networks and complex architectures."
+    }
+  ]
+}
