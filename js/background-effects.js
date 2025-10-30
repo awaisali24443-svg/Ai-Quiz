@@ -3,45 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
+    let currentAnimation = null;
     let animationFrameId;
-    // Helper to cancel any previous animation frame loop
-    const cancelPreviousAnimation = () => {
-        if (window.animationFrameId) {
-            cancelAnimationFrame(window.animationFrameId);
-        }
-    };
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas, false);
-    
-
-    const startAnimation = (animation) => {
-        cancelPreviousAnimation();
-        resizeCanvas();
-
-        if (animation && typeof animation.init === 'function' && typeof animation.animate === 'function') {
-            animation.init(canvas, ctx);
-            let lastTime = 0;
-            function loop(currentTime) {
-                const deltaTime = currentTime - lastTime;
-                lastTime = currentTime;
-                animation.animate(canvas, ctx, deltaTime);
-                window.animationFrameId = requestAnimationFrame(loop);
-            }
-            window.animationFrameId = requestAnimationFrame(loop);
-        }
-    };
-    
-    const theme = document.body.dataset.theme || 'ai-fundamentals';
 
     // --- Animation Definitions ---
 
     const GenericParticleEffect = {
         particles: [],
-        settings: { count: 50, minRadius: 1, maxRadius: 3, minSpeed: 0.1, maxSpeed: 0.5, color: 'rgba(0, 255, 255, 0.5)', lineColor: 'rgba(0, 255, 255, 0.1)', lineDistance: 150 },
+        settings: { count: 50, minRadius: 1, maxRadius: 3, minSpeed: 0.1, maxSpeed: 0.5, color: 'rgba(0, 255, 255, 0.5)'},
         init(canvas, ctx) {
             this.particles = [];
             for (let i = 0; i < this.settings.count; i++) {
@@ -61,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
                 ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = this.settings.color; ctx.fill();
             });
-            // simplified connect logic for performance
         }
     };
 
@@ -196,28 +164,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    switch (theme) {
-        case 'programming':
-            startAnimation(MatrixEffect);
-            break;
-        case 'biology':
-            startAnimation(BiologyEffect);
-            break;
-        case 'space-astronomy':
-            startAnimation(SpaceEffect);
-            break;
-        case 'mathematics':
-             startAnimation(MathEffect);
-            break;
-        case 'ai-fundamentals':
-        case 'machine-learning':
-        case 'deep-learning':
-        case 'ai-robotics':
-        case 'physics':
-        case 'chemistry':
-        case 'islamic-quiz':
-        default:
-            startAnimation(GenericParticleEffect);
-            break;
+    const animationMap = {
+        'programming': MatrixEffect,
+        'biology': BiologyEffect,
+        'space-astronomy': SpaceEffect,
+        'mathematics': MathEffect,
+    };
+    const defaultAnimation = GenericParticleEffect;
+
+    const startAnimation = (animation) => {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+        currentAnimation = animation;
+        
+        if (currentAnimation && typeof currentAnimation.init === 'function' && typeof currentAnimation.animate === 'function') {
+            currentAnimation.init(canvas, ctx);
+            let lastTime = 0;
+            function loop(currentTime) {
+                const deltaTime = currentTime - lastTime;
+                lastTime = currentTime;
+                currentAnimation.animate(canvas, ctx, deltaTime);
+                animationFrameId = requestAnimationFrame(loop);
+            }
+            animationFrameId = requestAnimationFrame(loop);
+        }
+    };
+
+    function handleResize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        if(currentAnimation) {
+            currentAnimation.init(canvas, ctx);
+        }
     }
+    
+    function run() {
+        const theme = document.body.dataset.theme || 'ai-fundamentals';
+        const selectedAnimation = animationMap[theme] || defaultAnimation;
+        handleResize(); // Initial resize
+        startAnimation(selectedAnimation);
+    }
+
+    // Wait for app.js to set the theme before running to prevent a race condition
+    document.addEventListener('themeApplied', run);
+    window.addEventListener('resize', handleResize, false);
 });

@@ -34,6 +34,9 @@ function route() {
         document.body.dataset.theme = selectedTopic;
     }
 
+    // Dispatch custom event to notify other scripts that the theme is ready
+    document.dispatchEvent(new CustomEvent('themeApplied'));
+
     switch (page) {
         case '':
         case 'index.html':
