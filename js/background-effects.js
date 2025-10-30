@@ -7,28 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     let animationFrameId;
 
     // --- Animation Definitions ---
-    const GenericParticleEffect = {
-        particles: [],
-        settings: { count: 50, minRadius: 1, maxRadius: 3, minSpeed: 0.1, maxSpeed: 0.5, color: 'rgba(31, 156, 255, 0.5)'},
+    const NexusWaveEffect = {
+        points: [],
+        settings: { count: 60, maxDist: 150, speed: 0.1, color: 'rgba(255, 189, 62, 0.4)' },
         init(canvas, ctx) {
-            this.particles = [];
+            this.points = [];
             for (let i = 0; i < this.settings.count; i++) {
-                this.particles.push({
-                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-                    radius: Math.random() * (this.settings.maxRadius - this.settings.minRadius) + this.settings.minRadius,
-                    vx: (Math.random() - 0.5) * (this.settings.maxSpeed - this.settings.minSpeed) + this.settings.minSpeed,
-                    vy: (Math.random() - 0.5) * (this.settings.maxSpeed - this.settings.minSpeed) + this.settings.minSpeed,
+                this.points.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * this.settings.speed,
+                    vy: (Math.random() - 0.5) * this.settings.speed,
+                    radius: Math.random() * 1.5 + 0.5
                 });
             }
         },
         animate(canvas, ctx) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            this.particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
+            this.points.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
                 if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
                 if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = this.settings.color; ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.settings.color;
+                ctx.fill();
             });
+
+            for (let i = 0; i < this.points.length; i++) {
+                for (let j = i + 1; j < this.points.length; j++) {
+                    const dist = Math.hypot(this.points[i].x - this.points[j].x, this.points[i].y - this.points[j].y);
+                    if (dist < this.settings.maxDist) {
+                        ctx.beginPath();
+                        ctx.moveTo(this.points[i].x, this.points[i].y);
+                        ctx.lineTo(this.points[j].x, this.points[j].y);
+                        ctx.strokeStyle = `rgba(255, 189, 62, ${0.5 - dist / this.settings.maxDist})`;
+                        ctx.stroke();
+                    }
+                }
+            }
         }
     };
 
@@ -117,103 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    const ScientificEffect = {
-        atoms: [], numAtoms: 10,
-        init(canvas, ctx) {
-            this.atoms = [];
-            for(let i=0; i<this.numAtoms; i++) {
-                this.atoms.push({
-                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-                    radius: Math.random() * 50 + 20,
-                    rotation: Math.random() * Math.PI,
-                    speed: (Math.random() - 0.5) * 0.02,
-                    electrons: Math.floor(Math.random() * 3) + 1
-                });
-            }
-        },
-        animate(canvas, ctx) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            this.atoms.forEach(atom => {
-                atom.rotation += atom.speed;
-                ctx.strokeStyle = 'rgba(235, 87, 87, 0.4)';
-                ctx.fillStyle = 'rgba(235, 87, 87, 0.6)';
-
-                ctx.beginPath(); ctx.arc(atom.x, atom.y, 5, 0, 2 * Math.PI); ctx.fill();
-                
-                for(let i=0; i<atom.electrons; i++) {
-                    const orbitRadiusX = atom.radius * (i * 0.4 + 0.6);
-                    const orbitRadiusY = orbitRadiusX / 2.5;
-                    const orbitAngle = atom.rotation + (i * Math.PI / atom.electrons);
-                    
-                    ctx.beginPath();
-                    ctx.ellipse(atom.x, atom.y, orbitRadiusX, orbitRadiusY, orbitAngle, 0, 2 * Math.PI);
-                    ctx.stroke();
-
-                    const electronAngle = (Date.now() / (800 + i*200)) + i * Math.PI;
-                    const electronX_local = Math.cos(electronAngle) * orbitRadiusX;
-                    const electronY_local = Math.sin(electronAngle) * orbitRadiusY;
-
-                    const rotatedEx = atom.x + electronX_local * Math.cos(orbitAngle) - electronY_local * Math.sin(orbitAngle);
-                    const rotatedEy = atom.y + electronX_local * Math.sin(orbitAngle) + electronY_local * Math.cos(orbitAngle);
-
-                    ctx.beginPath();
-                    ctx.arc(rotatedEx, rotatedEy, 2.5, 0, 2 * Math.PI);
-                    ctx.fill();
-                }
-            });
-        }
-    };
-
-    const IslamicKnowledgeEffect = {
-        particles: [],
-        settings: { count: 80, minRadius: 1, maxRadius: 2, minSpeed: 0.2, maxSpeed: 0.8, color: 'rgba(255, 189, 62, 0.5)'},
-        init(canvas, ctx) {
-            this.particles = [];
-            for (let i = 0; i < this.settings.count; i++) {
-                this.particles.push({
-                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-                    radius: Math.random() * (this.settings.maxRadius - this.settings.minRadius) + this.settings.minRadius,
-                    vx: (Math.random() - 0.5) * (this.settings.maxSpeed - this.settings.minSpeed) + this.settings.minSpeed,
-                    vy: (Math.random() - 0.5) * (this.settings.maxSpeed - this.settings.minSpeed) + this.settings.minSpeed,
-                });
-            }
-        },
-        animate(canvas, ctx) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            this.particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = this.settings.color; ctx.fill();
-            });
-
-            for (let i = 0; i < this.particles.length; i++) {
-                for (let j = i; j < this.particles.length; j++) {
-                    const dist = Math.hypot(this.particles[i].x - this.particles[j].x, this.particles[i].y - this.particles[j].y);
-                    if (dist < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(this.particles[i].x, this.particles[i].y);
-                        ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                        ctx.strokeStyle = `rgba(255, 189, 62, ${0.8 - dist / 100})`;
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-    };
-
     const topicEffectMap = {
-        'programming-knowledge': MatrixEffect,
-        'artificial-intelligence': MatrixEffect,
-        'biological-knowledge': BiologyEffect,
-        'space-universe': SpaceEffect,
-        'scientific-knowledge': ScientificEffect,
-        'islamic-knowledge': IslamicKnowledgeEffect,
-        'tech-innovation': GenericParticleEffect,
-        'default': GenericParticleEffect
+        'programming-ai': MatrixEffect,
+        'biology-genetics': BiologyEffect,
+        'cosmology-space': SpaceEffect,
+        'default': NexusWaveEffect
     };
-    topicEffectMap['tech-innovation'].settings = { ...GenericParticleEffect.settings, color: 'rgba(242, 153, 74, 0.5)' };
-
 
     function setupAnimation() {
         canvas.width = window.innerWidth;

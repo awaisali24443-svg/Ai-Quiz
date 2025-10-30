@@ -6,7 +6,7 @@ if (API_KEY) {
     ai = new GoogleGenAI({ apiKey: API_KEY });
 }
 
-const USER_PROGRESS_KEY = 'aiKnowledgeHubProgress';
+const USER_PROGRESS_KEY = 'aiQuizNexusProgress';
 const TOTAL_LEVELS = 20;
 const QUIZ_TIMER_SECONDS = 15;
 
@@ -47,6 +47,16 @@ function initNav() {
             document.body.classList.toggle('nav-open');
         });
     }
+
+    // Set active link in bottom nav
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.bottom-nav-link');
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href').split("/").pop();
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
 }
 
 function route() {
@@ -94,6 +104,10 @@ async function initHomePage() {
             card.dataset.id = topic.id;
             card.setAttribute('role', 'listitem');
             card.setAttribute('tabindex', '0');
+            // Set background image from JSON
+            if (topic.image) {
+                card.style.backgroundImage = `url('${topic.image}')`;
+            }
             card.innerHTML = `<h4>${topic.title}</h4><p>${topic.description}</p>`;
             card.addEventListener('click', () => selectTopic(topic.id));
             card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') selectTopic(topic.id); });
@@ -321,7 +335,7 @@ function initResultsPage() {
 
 
     document.getElementById('retry-button').addEventListener('click', () => {
-        selectLevel(level);
+        retryLevel();
     });
     
     const nextLevelButton = document.getElementById('next-level-button');
@@ -360,6 +374,24 @@ function selectLevel(level) {
     window.location.href = 'quiz.html';
 }
 
+/**
+ * Handles the logic for retrying the current level.
+ * It reads the current level from localStorage and navigates back to the quiz page for that level.
+ * This effectively resets the quiz state (score, timer, etc.) because the quiz page re-initializes itself on load.
+ * The user's progress is updated on the results page after the retry attempt is completed.
+ */
+function retryLevel() {
+    const levelToRetry = localStorage.getItem('selectedLevel');
+    if (levelToRetry) {
+        // Re-selecting the same level is all that's needed to restart it.
+        selectLevel(levelToRetry);
+    } else {
+        // Fallback: If level info is missing, go home.
+        console.error("Could not determine level to retry. Navigating home.");
+        window.location.href = 'index.html';
+    }
+}
+
 // --- Gemini AI Feedback ---
 async function getAIFeedback(incorrectAnswers) {
     if (!ai) {
@@ -389,7 +421,7 @@ async function getAIFeedback(incorrectAnswers) {
             `).join('')}
         `;
 
-        const response = await ai.models.generateContent({ model: "gemini-2.5-flash", contents: prompt });
+        const response = await ai.models.generateContent({ model: "gem-pro", contents: prompt });
         
         let html = response.text;
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');

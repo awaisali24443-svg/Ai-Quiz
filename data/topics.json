@@ -1,54 +1,58 @@
 {
   "topics": [
     {
-      "id": "programming-knowledge",
-      "title": "Programming Knowledge",
-      "description": "Challenge your understanding of code, logic, and software."
+      "id": "programming-ai",
+      "title": "Programming & AI",
+      "description": "Dive into algorithms, machine learning, and advanced coding concepts.",
+      "image": "assets/images/topics/programming.jpg"
     },
     {
-      "id": "biological-knowledge",
-      "title": "Biological Knowledge",
-      "description": "Explore the science of life, from microscopic cells to vast ecosystems."
+      "id": "biology-genetics",
+      "title": "Biology & Genetics",
+      "description": "Explore the mysteries of life, from cellular structures to ecosystems.",
+      "image": "assets/images/topics/biology.jpg"
     },
     {
-      "id": "world-knowledge",
-      "title": "World Knowledge",
-      "description": "Test your general knowledge about our diverse and fascinating world."
+      "id": "cosmology-space",
+      "title": "Cosmology & Space",
+      "description": "Journey through the cosmos, studying black holes, distant galaxies, and the origins of the universe.",
+      "image": "assets/images/topics/space.jpg"
     },
     {
-      "id": "space-universe",
-      "title": "Space & Universe",
-      "description": "Journey through the cosmos and explore celestial objects and phenomena."
+      "id": "robotics-automation",
+      "title": "Robotics & Automation",
+      "description": "Delve into the world of smart machines, automation principles, and future technological advancements.",
+      "image": "assets/images/topics/robotics.jpg"
     },
     {
-      "id": "artificial-intelligence",
-      "title": "Artificial Intelligence",
-      "description": "Delve into the world of intelligent machines, algorithms, and data."
+      "id": "business-finance",
+      "title": "Business & Finance",
+      "description": "Master economic theories, market trends, and strategic business management.",
+      "image": "assets/images/topics/finance.jpg"
     },
     {
-      "id": "tech-innovation",
-      "title": "Technology & Innovation",
-      "description": "Discover the breakthroughs and inventions shaping our digital future."
+      "id": "arts-culture",
+      "title": "Arts & Culture",
+      "description": "Explore art history, diverse cultural movements, and creative expressions across different civilizations.",
+      "image": "assets/images/topics/culture.jpg"
     },
     {
-      "id": "history-civilization",
-      "title": "History & Civilization",
-      "description": "Unravel the stories and pivotal events that have shaped humanity."
+      "id": "medicine-health",
+      "title": "Medicine & Health",
+      "description": "Understand human anatomy, physiology, and modern medical practices.",
+      "image": "assets/images/topics/medicine.jpg"
     },
     {
-      "id": "scientific-knowledge",
-      "title": "Scientific Knowledge",
-      "description": "Engage with fundamental principles from various fields of science."
+      "id": "environment-ecology",
+      "title": "Environment & Ecology",
+      "description": "Learn about environmental science, climate change, and sustainable practices.",
+      "image": "assets/images/topics/ecology.jpg"
     },
     {
-      "id": "islamic-knowledge",
-      "title": "Islamic Knowledge",
-      "description": "Deepen your understanding of Islamic history, principles, and culture."
-    },
-    {
-      "id": "global-quiz-arena",
-      "title": "Global Quiz Arena",
-      "description": "A challenging mix of questions from all topics for the ultimate test."
+      "id": "logic-philosophy",
+      "title": "Logic & Philosophy",
+      "description": "Challenge your mind with logical puzzles, critical thinking, and fundamental questions.",
+      "image": "assets/images/topics/philosophy.jpg"
     }
   ]
 }
