@@ -68,7 +68,15 @@ function route() {
         document.body.dataset.theme = selectedTopic;
     }
 
-    document.dispatchEvent(new CustomEvent('themeApplied'));
+    const isHomePage = page === '' || page === 'index.html';
+    const canvas = document.getElementById('background-canvas');
+
+    if (isHomePage) {
+        if (canvas) canvas.style.display = 'none'; // Explicitly hide on home
+    } else {
+        if (canvas) canvas.style.display = 'block'; // Ensure it's shown on other pages
+        document.dispatchEvent(new CustomEvent('themeApplied'));
+    }
 
     switch (page) {
         case '':
@@ -455,7 +463,7 @@ async function getAIFeedback(incorrectAnswers) {
             `).join('')}
         `;
 
-        const response = await ai.models.generateContent({ model: "gem-2.5-flash", contents: prompt });
+        const response = await ai.models.generateContent({ model: "gemini-2.5-flash", contents: prompt });
         
         let html = response.text;
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
