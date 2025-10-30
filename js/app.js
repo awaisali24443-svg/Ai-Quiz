@@ -175,19 +175,28 @@ async function initLevelsPage() {
 }
 
 async function initQuizPage() {
+    // 1. Retrieve the current topic and level from the browser's local storage.
+    // This state is set when the user makes a selection on the previous pages.
     const topicId = localStorage.getItem('selectedTopic');
     const level = localStorage.getItem('selectedLevel');
+
+    // If we don't know the topic or level, we can't show a quiz. Redirect to home.
     if (!topicId || !level) {
         window.location.href = 'index.html';
         return;
     }
     
     try {
+        // 2. Asynchronously fetch the entire question database.
+        // For a larger app, this could be a specific API endpoint per topic/level.
         const response = await fetch('data/questions.json');
         if (!response.ok) throw new Error('Failed to load questions.');
         const allData = await response.json();
+
+        // 3. Find the specific questions for the selected topic and level from the loaded data.
         const levelData = allData[topicId]?.levels.find(l => l.level == level);
         
+        // Handle cases where a level might exist in the structure but has no questions yet.
         if (!levelData || !levelData.questions || levelData.questions.length === 0) {
             document.querySelector('.quiz-container').innerHTML = `
                 <h2>Coming Soon!</h2>
@@ -196,6 +205,7 @@ async function initQuizPage() {
             return;
         }
         
+        // 4. Initialize the state for the current quiz attempt.
         const questions = levelData.questions;
         let currentQuestionIndex = 0;
         let score = 0;
@@ -203,12 +213,15 @@ async function initQuizPage() {
         let timerInterval;
         let timeLeft = QUIZ_TIMER_SECONDS;
 
+        // Get references to all the DOM elements we'll need to interact with.
         const questionText = document.getElementById('question-text');
         const optionsContainer = document.getElementById('options-container');
         const nextButton = document.getElementById('next-button');
         const progressText = document.getElementById('progress-text');
         const progressBarInner = document.getElementById('progress-bar-inner');
         const timerText = document.getElementById('quiz-timer');
+        const hintButton = document.getElementById('hint-button');
+        const hintContainer = document.getElementById('hint-container');
 
         function startTimer() {
             timeLeft = QUIZ_TIMER_SECONDS;
@@ -219,7 +232,7 @@ async function initQuizPage() {
                 timerText.textContent = timeLeft;
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    handleAnswer(null); // Timeout is like a wrong answer
+                    handleAnswer(null); // Timeout is treated as an incorrect answer.
                 }
             }, 1000);
         }
@@ -230,6 +243,12 @@ async function initQuizPage() {
             optionsContainer.innerHTML = '';
             nextButton.disabled = true;
 
+            // Reset hint display for the new question.
+            hintContainer.hidden = true;
+            hintContainer.textContent = '';
+            hintButton.disabled = false;
+
+            // Dynamically create and display the answer options.
             currentQuestion.options.forEach((option, index) => {
                 const button = document.createElement('button');
                 button.className = 'option-btn';
@@ -238,6 +257,7 @@ async function initQuizPage() {
                 optionsContainer.appendChild(button);
             });
             
+            // Update the progress display.
             progressText.textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
             progressBarInner.style.width = `${((currentQuestionIndex) / questions.length) * 100}%`;
             startTimer();
@@ -246,6 +266,7 @@ async function initQuizPage() {
         function handleAnswer(selectedButton) {
             clearInterval(timerInterval);
             document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+            hintButton.disabled = true;
             nextButton.disabled = false;
             nextButton.focus();
 
@@ -260,12 +281,14 @@ async function initQuizPage() {
                 selectedButton.classList.add('incorrect');
             }
             
+            // Always highlight the correct answer after a selection is made.
             Array.from(optionsContainer.children).forEach(button => {
                 if (button.querySelector('.option-text').textContent === currentQuestion.answer) {
                     button.classList.add('correct');
                 }
             });
 
+            // Store the result for the summary page.
             userAnswers.push({
                 question: currentQuestion.question,
                 selectedAnswer: answer,
@@ -274,6 +297,19 @@ async function initQuizPage() {
             });
         }
         
+        function showHint() {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (currentQuestion.hint) {
+                hintContainer.textContent = currentQuestion.hint;
+                hintContainer.hidden = false;
+                hintButton.disabled = true; // Hint can only be used once per question.
+            } else {
+                hintContainer.textContent = "No hint available for this question.";
+                hintContainer.hidden = false;
+                hintButton.disabled = true;
+            }
+        }
+
         nextButton.addEventListener('click', () => {
             currentQuestionIndex++;
             progressBarInner.style.width = `${((currentQuestionIndex) / questions.length) * 100}%`;
@@ -281,6 +317,7 @@ async function initQuizPage() {
             if (currentQuestionIndex < questions.length) {
                 loadQuestion();
             } else {
+                // Quiz is over, save results and navigate to the results page.
                 localStorage.setItem('quizScore', score);
                 localStorage.setItem('totalQuestions', questions.length);
                 localStorage.setItem('quizResults', JSON.stringify(userAnswers));
@@ -288,7 +325,11 @@ async function initQuizPage() {
             }
         });
 
+        hintButton.addEventListener('click', showHint);
+
+        // 5. Load the very first question to start the quiz as soon as the page is ready.
         loadQuestion();
+
     } catch (error) {
         console.error('Error initializing quiz page:', error);
         document.querySelector('.quiz-container').innerHTML = `<p class="error-message">Error loading quiz. Please try again later.</p>`;
@@ -414,7 +455,7 @@ async function getAIFeedback(incorrectAnswers) {
             `).join('')}
         `;
 
-        const response = await ai.models.generateContent({ model: "gemini-2.5-flash", contents: prompt });
+        const response = await ai.models.generateContent({ model: "gem-2.5-flash", contents: prompt });
         
         let html = response.text;
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
